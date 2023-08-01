@@ -15,6 +15,11 @@ app.use(cors())
 
 app.use(express.json());
 
+app.use(cors());
+
+app.get("/" , (req , res) => {
+  res.setHeader("Access-Control-Allow-Credentials" , "true");
+});
 //abhi humne ek .get karke end-point banaya hai and vo return kar raha hai hello om, but hamare ye application ko chaiye hoge kuch aur endpoints taaki hum hamare application me various  kaam kar sake for example user autnthicate ke liye, konsa user kaha connected hai kiske konse notes hai, etc.
 // app.get('/', (req, res) => {
 //   res.send('Hello Om!')
