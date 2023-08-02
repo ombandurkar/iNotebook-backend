@@ -1,7 +1,7 @@
 let jwt = require('jsonwebtoken');
 
-let JWT_SECRET = "om@is#great"
-// const JWT_SECRET = process.env.REACT_APP_SECRET_CODE
+require('dotenv').config()
+const JWT_SECRET = process.env.JWT_SECRET_CODE
 
 //request, response, and next lega middleware, middleware ek function hota hai
 //yaha par next means, iske baad joo bhi function ho use run karva do, here it is async (req,res) waala in auth.js
