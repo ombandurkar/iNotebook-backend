@@ -11,7 +11,7 @@ const fetchuser = (req, res, next) => {
     const token = req.header('auth-token') //mai token header se le aaunga and mai iska naam auth-token rakh deta hu
 
     if (!token) {
-        res.status(401).send({ error: "Access denied, please autheticate with a valid token" })
+        res.status(401).json({ error: "Access denied, please autheticate with a valid token" })
     }
 
     try {
@@ -20,7 +20,7 @@ const fetchuser = (req, res, next) => {
         req.user = data.user;  //hume user mil jaayega
         next();
     } catch (error) {
-        res.status(401).send({ error: "Access denied, please autheticate with a valid token" })
+        res.status(401).json({ error: "Access denied, please autheticate with a valid token" })
     }
 
 }
